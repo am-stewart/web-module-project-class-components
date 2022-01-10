@@ -3,11 +3,11 @@ import React from 'react';
 class Todo extends React.Component {
 
 render() {
-    return (
-        <div>
-            <h3>To Do</h3>
-        </div>
-    )
+  return (
+    <div>
+      <p>{this.props.task}</p>
+    </div>
+  )
   }
 }
 
