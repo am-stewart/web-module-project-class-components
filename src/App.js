@@ -3,10 +3,15 @@ import React from 'react';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 
-const toDo = [
+const tasks = [
   {
     task: 'laundry',
     id:123,
+    completed: false
+  },
+  {
+    task: 'dishes',
+    id: 124,
     completed: false
   }
 ];
@@ -15,7 +20,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      toDo: toDo
+      toDo: tasks
     };
   }
   // you will need a place to store your state in this component.

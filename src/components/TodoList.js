@@ -7,11 +7,15 @@ import Todo from './Todo'
 class TodoList extends React.Component {
 
 render() {
-    return (
-        <div>
-            <h3>To Do List</h3>
-        </div>
-    )
+  return (
+    <div>
+      {
+        this.props.toDo.map(item => (
+            <p>{item.task}</p>
+        ))
+      }
+    </div>
+  )
   }
 }
 
