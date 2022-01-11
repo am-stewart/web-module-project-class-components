@@ -33,7 +33,7 @@ class App extends React.Component {
   // this component is going to take care of state, and any change handlers you need to work with your state
   handleAddItem = (itemName) => {
     const newItem = {
-      name: itemName,
+      task: itemName,
       id: Date.now(),
       completed: false
     };
@@ -53,11 +53,29 @@ class App extends React.Component {
     });
   }
 
+  handleToggleTask = (selectedItem) => {
+    this.setState({
+      ...this.state,
+      toDo: this.state.toDo.map(item => {
+        console.log('appjs map toDo item', item)
+        console.log('appjs selecteditem', selectedItem)
+        if(item.id === selectedItem.id) {
+          return ({
+            ...item,
+            completed: !item.completed
+          })
+        } else {
+          return item;
+        }
+      })
+    });
+  }
+
   render() {
     return (
       <div>
-        <h2>Welcome to your Todo App!</h2>
-        <TodoList toDo={this.state.toDo} />
+        <h2>Todo App</h2>
+        <TodoList handleToggleTask={this.handleToggleTask} toDo={this.state.toDo} />
         <TodoForm handleAddItem={this.handleAddItem}/>
         <button onClick={this.handleClearCompleted}>Clear Completed</button>
       </div>
