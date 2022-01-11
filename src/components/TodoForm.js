@@ -1,12 +1,6 @@
 import React from 'react';
 
 class TodoForm extends React.Component {
-  constructor() {
-    super();
-      this.state ={
-        input: ''
-      }  
-  }
 
   handleChanges = e => {
       this.setState({

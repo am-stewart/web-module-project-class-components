@@ -12,12 +12,12 @@ const tasks = [
   {
     task: 'dishes',
     id: 124,
-    completed: false
+    completed: true
   },
   {
     task: 'make bed',
     id: 1256,
-    completed: true
+    completed: false
   }
 ];
 
@@ -57,8 +57,6 @@ class App extends React.Component {
     this.setState({
       ...this.state,
       toDo: this.state.toDo.map(item => {
-        console.log('appjs map toDo item', item)
-        console.log('appjs selecteditem', selectedItem)
         if(item.id === selectedItem.id) {
           return ({
             ...item,
@@ -72,6 +70,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log('state', this.state)
     return (
       <div>
         <h2>Todo App</h2>
