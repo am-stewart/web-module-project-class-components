@@ -70,7 +70,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log('state', this.state)
     return (
       <div>
         <h2>Todo App</h2>
